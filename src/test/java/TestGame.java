@@ -45,19 +45,23 @@ public class TestGame {
 		assertEquals(17, score);
 	}
 	
+
+	
 	@Test
-	public void roll0and0Result17(){
+	public void spare(){
 		int score;
-		game.roll(0);
-		game.roll(0);
 		game.roll(3);
 		game.roll(5);
 		game.roll(7);
 		game.roll(2);
+		game.roll(0);
+		game.roll(0);
+		game.roll(5);
+		game.roll(5);
 		
 		score=game.score();
 		
-		assertEquals(17, score);
+		assertEquals(27, score);
 	}
 
 }
