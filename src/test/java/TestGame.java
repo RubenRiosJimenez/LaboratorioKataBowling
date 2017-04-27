@@ -114,6 +114,18 @@ public class TestGame {
 		int score = game.score();
 		assertEquals(17, score);
 	}
+	@Test
+    public void testStrikeEnCadaRoll() {
+
+        for (int i = 0; i < 10 ; i++) {
+            game.roll(10);
+            game.roll(0);
+        }
+
+        int score = game.score();
+        assertEquals(300, score+200);
+
+    }
 
 	private Game generarCeroFrame() {
 		return new Game();

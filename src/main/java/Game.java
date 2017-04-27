@@ -5,7 +5,7 @@ import java.util.List;
 
 
 public class Game {
-	private static final int FRAMES_PER_GAME = 10;
+	
     private List<Frame> frames = new LinkedList<Frame>();
 	private int add=0;
 	
