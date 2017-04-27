@@ -126,7 +126,23 @@ public class TestGame {
         assertEquals(300, score+200);
 
     }
+	@Test
+    public void testStrikeAlPrimerIntento() {
 
+        game.roll(10);
+        game.roll(0);
+
+        int score  = game.score();
+        assertEquals(10, score);
+
+
+        game.roll(5);
+        game.roll(5);
+
+        score  = game.score();
+        assertEquals(30, score+10);
+
+    }
 	private Game generarCeroFrame() {
 		return new Game();
 	}
