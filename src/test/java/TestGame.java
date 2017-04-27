@@ -51,23 +51,6 @@ public class TestGame {
 
 	
 	@Test
-	public void spare(){
-		int score;
-		game.roll(3);
-		game.roll(5);
-		game.roll(7);
-		game.roll(2);
-		game.roll(0);
-		game.roll(0);
-		game.roll(5);
-		game.roll(5);
-		
-		score=game.score();
-		
-		assertEquals(27, score);
-	}
-	
-	@Test
     public void DebeDevolverLaPuntuacionCero() {
         for (int i = 0; i < 10; i++) {
             Game CeroFrame = generarCeroFrame();
@@ -85,6 +68,23 @@ public class TestGame {
 	        int score  = game.score();
 	        assertEquals(8, score);
 	}
+	
+	@Test
+    public void testSpare() {
+
+        game.roll(4);
+        game.roll(6);
+
+        int score  = game.score();
+        assertEquals(10, score);
+
+        game.roll(5);
+        game.roll(5);
+
+        score  = game.score();
+        assertEquals(20, score);
+
+    }
 	private Game generarCeroFrame() {
         return new Game();
     }
