@@ -77,6 +77,14 @@ public class TestGame {
         assertEquals(0, game.score());
     }
 	
+	@Test
+	public void NoEsStrikeNiSpare(){
+		 	game.roll(4);
+	        game.roll(4);
+
+	        int score  = game.score();
+	        assertEquals(8, score);
+	}
 	private Game generarCeroFrame() {
         return new Game();
     }
