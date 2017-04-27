@@ -1,11 +1,14 @@
 import static org.junit.Assert.*;
 
+import java.awt.Frame;
+
+import org.junit.Before;
 import org.junit.Test;
 
 public class TestGame {
 	
 	private Game game = new Game();
-	
+	 
 	@Test
 	public void roll3And5() {
 		
@@ -63,5 +66,19 @@ public class TestGame {
 		
 		assertEquals(27, score);
 	}
+	
+	@Test
+    public void DebeDevolverLaPuntuacionCero() {
+        for (int i = 0; i < 10; i++) {
+            Game CeroFrame = generarCeroFrame();
+            game.addFrame(CeroFrame);
+        }
+
+        assertEquals(0, game.score());
+    }
+	
+	private Game generarCeroFrame() {
+        return new Game();
+    }
 
 }
